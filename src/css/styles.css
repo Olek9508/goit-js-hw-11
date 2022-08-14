@@ -10,9 +10,14 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  margin: 0;
 }
 
-#search-box {
+.search-form {
+  background-color: #4169E1;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
   font: inherit;
   padding: 8px;
   max-width: 320px;
@@ -36,14 +41,16 @@ b{
   margin-bottom: 0;
 }
 
-.list-headline{
-  margin-left: 10px;
-}
-
 p{
   margin-left: 5px;
 }
 
-.container-little{
-  display: flex;
+.load-more{
+  /* display: none; */
 }
+
+.load-more.hide{
+  display: none;
+}
+
+
