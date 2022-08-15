@@ -36,7 +36,12 @@ const createSmallCardsMarkup = array => {
     ''
   );
   galleryContainer.innerHTML = arrayRender;
-  const lightBox = new SimpleLightbox('.gallery a');
+  const lightBox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    animationSpeed: 250,
+  });
+
   lightBox.refresh();
 };
 
