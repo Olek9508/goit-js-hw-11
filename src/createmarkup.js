@@ -3,16 +3,15 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const createSmallCardsMarkup = array => {
-  galleryContainer.innerHTML = '';
   const arrayRender = array.reduce(
     (
       acc,
       { webformatURL, largeImageURL, tags, likes, views, comments, downloads }
     ) =>
       acc +
-      `<a href = "${largeImageURL}">
-      <div class="photo-card">
-      <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+      `<a href = "${largeImageURL}" class = "gallery__link">
+      <div class="gallery__item">
+      <img src="${webformatURL}" alt="${tags}" loading="lazy" class = "gallery__image" />
       <div class="info">
         <p class="info-item">
           <b>Likes: ${likes}
@@ -32,10 +31,10 @@ const createSmallCardsMarkup = array => {
         </p>
       </div>
     </div>
-    </a>`,
+      </a> `,
     ''
   );
-  galleryContainer.innerHTML = arrayRender;
+  galleryContainer.insertAdjacentHTML('beforeend', arrayRender);
   const lightBox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionPosition: 'bottom',
@@ -43,6 +42,8 @@ const createSmallCardsMarkup = array => {
   });
 
   lightBox.refresh();
+
+  return galleryContainer;
 };
 
 export { createSmallCardsMarkup };
