@@ -16,10 +16,12 @@ function onFormSubmit(event) {
     return Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again'
     );
+  } else {
+    galleryContainer.innerHTML = '';
+    fetchLibrarySearch(elValue, currentPage)
+      .then(onResponseCheck)
+      .catch(error => error);
   }
-  fetchLibrarySearch(elValue, currentPage)
-    .then(onResponseCheck)
-    .catch(error => error);
 }
 
 function onLoadMore() {

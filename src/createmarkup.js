@@ -3,7 +3,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const createSmallCardsMarkup = array => {
-  galleryContainer.innerHTML = '';
+  array.innerHTML = '';
   const arrayRender = array.reduce(
     (
       acc,
