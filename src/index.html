@@ -8,19 +8,31 @@
     <title>Homework 11</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
-    <div class="gallery">
-      <!-- Карточки изображений -->
-    </div>
-    <button type="button" class="load-more hide">Load more</button>
+    <header>
+      <form class="search-form" id="search-form">
+        <div class="search-container">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+          <button type="submit" class="submit__btn">
+            <svg class="icon icon-search">
+              <use href="./images/search.svg#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </header>
+    <section class="portfolio">
+      <div class="gallery container">
+        <!-- Карточки изображений -->
+      </div>
+    </section>
+    <footer class="footer-container container">
+      <button type="button" class="load-more hide">Load more</button>
+    </footer>
+    <script src="index.js" type="module"></script>
   </body>
-  <script src="index.js" type="module"></script>
 </html>
